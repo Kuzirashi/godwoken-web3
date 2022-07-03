@@ -220,13 +220,13 @@ export interface ExecuteOneQueryResult {
 
 export function getDatabaseRateLimitingConfiguration() {
   const MAX_QUERY_NUMBER = envConfig["maxQueryNumber"]
-    ? parseInt(envConfig["maxQueryNumber"], 10)
+    ? +envConfig["maxQueryNumber"]
     : DEFAULT_MAX_QUERY_NUMBER;
   const MAX_QUERY_TIME_MILSECS = envConfig["maxQueryTimeInMilliseconds"]
-    ? parseInt(envConfig["maxQueryTimeInMilliseconds"], 10)
+    ? +envConfig["maxQueryTimeInMilliseconds"]
     : DEFAULT_MAX_QUERY_TIME_MILSECS;
   const MAX_QUERY_ROUNDS = envConfig["maxQueryRounds"]
-    ? parseInt(envConfig["maxQueryRounds"], 10)
+    ? +envConfig["maxQueryRounds"]
     : DEFAULT_MAX_QUERY_ROUNDS;
 
   return {
